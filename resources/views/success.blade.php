@@ -17,7 +17,8 @@
 
     @section('content')
     <div class="container">
-    <div class="text-center">success!!!</div>
+      <div class="text-center">success!!!</div>
+      <div class="text-center">{{ $details->web_url }}</div>
     </div>
     @endsection
 

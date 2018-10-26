@@ -58,7 +58,7 @@ class ApiTestController extends Controller
         ]);
 	$createapp = $this->createapp($request->email, $request->password);
 	$buildapp = $this->buildapp($request->email, $request->password,$createapp->name ,"flask");
-	return view('success');
+	return view('success')->with('detail',$createapp);
     }
 
     /**
