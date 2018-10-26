@@ -57,7 +57,7 @@ class ApiTestController extends Controller
             "collabuser" => $request->collaborator
         ]);
 	$createapp = $this->createapp($request->email, $request->password);
-	dd($createapp);
+	dd($createapp->name);
 	$buildapp = $this->buildapp($request->email, $request->password,"hackathentest" ,"flask");
 	return view('success');
     }
