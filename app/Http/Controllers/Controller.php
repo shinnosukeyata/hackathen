@@ -18,8 +18,9 @@ class Controller extends BaseController
            curl_setopt($ch, CURLOPT_USERPWD, $email.":".$password);
            $headers = ['Accept: application/vnd.heroku+json; version=3',"Content-Type: application/json"];
        	   curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+	   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
            $result = curl_exec($ch);
-	   return $result;
+	   return json_decode($result);
 	   }
 
 	   public function buildapp($email, $password, $appname, $framework){
