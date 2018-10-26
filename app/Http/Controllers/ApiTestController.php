@@ -56,15 +56,8 @@ class ApiTestController extends Controller
             "repositoryName" => $request->repository_name,
             "collabuser" => $request->collaborator
         ]);
-	$url = "https://api.heroku.com/apps";
-	$ch = curl_init($url);
-	curl_setopt($ch, CURLOPT_POST, true);
-	curl_setopt($ch, CURLOPT_USERPWD, $request->email.":".$request->password);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	$headers = ['Accept: application/vnd.heroku+json; version=3'
-		 ];
-	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-	$result = curl_exec($ch);
+	$herokuapp = self.createapp($request->email, $request->password);
+	dd($herokuapp);
 	return view('welcome');
     }
 
