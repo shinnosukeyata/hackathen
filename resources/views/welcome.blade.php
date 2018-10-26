@@ -17,7 +17,7 @@
 
     @section('content')
     <div class="container">
-    <div class="text-center">You can make repository and invite your Hackathon member easily.</div>
+    <div class="text-center">You can make repository and invite your Hackathon member easily!!!</div>
     <div class="row">
       <div class="col-md-offset-4 col-md-3">
 	<a class="btn btn-primary" href="{{ route('login.github') }}">GitHub login</a>
