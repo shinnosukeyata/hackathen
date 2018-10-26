@@ -31,6 +31,7 @@ class Controller extends BaseController
 	       	  $headers = ['Accept: application/vnd.heroku+json; version=3',"Content-Type: application/json"];
 	       	  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 	       	  $data = '{"source_blob":{"url":'.'"https://arcane-coast-61901.herokuapp.com/framework/'.$framework.'.tar.gz"'.'}}';
+		  curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 		  $result = curl_exec($ch);
 	}
 }
