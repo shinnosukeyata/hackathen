@@ -23,7 +23,7 @@ class Controller extends BaseController
 	   }
 
 	   public function buildapp($email, $password, $appname, $framework){
-	       	  $url = "https://api.heroku.com/apps/mysterious-beyond-80168/builds";
+	       	  $url = "https://api.heroku.com/apps/".$appname."/builds";
 	       	  $ch = curl_init($url);
 	       	  curl_setopt($ch, CURLOPT_POST, true);
 	       	  curl_setopt($ch, CURLOPT_USERPWD, $email.":".$password);
