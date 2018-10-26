@@ -56,9 +56,10 @@ class ApiTestController extends Controller
             "repositoryName" => $request->repository_name,
             "collabuser" => $request->collaborator
         ]);
-	$herokuapp = self.createapp($request->email, $request->password);
-	dd($herokuapp);
-	return view('welcome');
+	$createapp = $this->createapp($request->email, $request->password);
+	$buildapp = $this->buildapp($request->email, $request->password,"blooming-crag-58783" ,"flask");
+	dd($buildapp);
+	return view('result');
     }
 
     /**
