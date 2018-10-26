@@ -50,12 +50,18 @@ class ApiTestController extends Controller
             "accessToken" => $request->access_token,
             "name" => $request->repository_name
         ]);
-        $result2 = $rapid->call('Github', 'addRepositoryCollaborator', [
-            "accessToken" => $request->access_token,
-            "user" => $request->owner,
-            "repositoryName" => $request->repository_name,
-            "collabuser" => $request->collaborator
-        ]);
+
+	for($i=1;$i<=10;$i++){
+            $collaborator = 'collaborator' . $i;
+            if (empty($request->$collaborator) !== true){
+                $result2 = $rapid->call('Github', 'addRepositoryCollaborator', [
+                    "accessToken" => $request->access_token,
+                    "user" => $request->owner,
+                    "repositoryName" => $request->repository_name,
+                    "collabuser" => $request->$collaborator
+                ]);
+            }
+        }
 	$createapp = $this->createapp($request->email, $request->password);
 	$buildapp = $this->buildapp($request->email, $request->password,$createapp->name ,"flask");
 	return view('success')->with('detail',$createapp);
