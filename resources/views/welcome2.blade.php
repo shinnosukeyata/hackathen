@@ -108,7 +108,7 @@
                                 <label for="access_token" class="col-md-4 col-form-label text-md-right">{{ __('Access Token') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="access_token" type="text" class="form-control{{ $errors->has('access_token') ? ' is-invalid' : '' }}" name="access_token" value="{{ $user->token }}" required>
+                                    <input id="access_token" type="passwords" class="form-control{{ $errors->has('access_token') ? ' is-invalid' : '' }}" name="access_token" value="{{ $user->token }}" required>
 
                                     @if ($errors->has('access_token'))
                                     <span class="invalid-feedback" role="alert">
@@ -134,7 +134,7 @@
                                 <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('heroku password') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="password" type="text" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                                    <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                                     @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
