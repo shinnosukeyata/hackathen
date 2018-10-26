@@ -65,7 +65,6 @@ class ApiTestController extends Controller
 		 ];
 	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 	$result = curl_exec($ch);
-	dd($ch);
 	return view('welcome');
     }
 
