@@ -1,4 +1,4 @@
-;/'<!doctype html>
+<!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
@@ -91,21 +91,17 @@
                             </div>
                             <!--2つめ-->
                             <div class="form-group row">
-                                <label for="collaborator" class="col-md-4 col-form-label text-md-right">{{ __('Collaborators Name') }}</label>
+                                <label for="collaborator1" class="col-md-4 col-form-label text-md-right">{{ __('Collaborator1 Name') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="collaborator" type="text" class="form-control{{ $errors->has('collaborator') ? ' is-invalid' : '' }}" name="collaborator" value="{{ old('collaborator') }}" required>
+                                    <input id="collaborator1" type="text" class="form-control{{ $errors->has('collaborator1') ? ' is-invalid' : '' }}" name="collaborator1" value="{{ old('collaborator1') }}" required>
 
-                                    @if ($errors->has('collaborator'))
+                                    @if ($errors->has('collaborator1'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('collaborator') }}</strong>
+                                        <strong>{{ $errors->first('collaborator1') }}</strong>
                                     </span>
                                     @endif
                                 </div>
-				<div class="col-md-6">
-				<div id="collaborator">
-				</div>
-				</div>
                             </div>
 			    <div id="collaborator"></div>
                             <div class="form-group row">
